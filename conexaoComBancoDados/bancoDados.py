@@ -2,7 +2,7 @@ import os
 import sqlite3
 from sqlite3 import Error
 
-def conexaoBancoDAdos():
+def conexaoBancoDados():
     caminhoBancodados = "C:/Users/juven/OneDrive/Documents/aulas-jornada-do-dev/agenda.db"
     conexao = None
     try:
@@ -12,15 +12,17 @@ def conexaoBancoDAdos():
     return conexao
 
 
-def query(conexao, sql):
+def comandoquery(conexao, sql):
     try:
         cursor = conexao.cursor()
         cursor.execute(sql)
         conexao.commit()
+        conexao.close()
     except Error as ex:
         print(ex)
     finally:
-        conexao.close()
+        print("Finaly")
+        #conexao.close()
 
 
 def consultar(conexao, sql):
