@@ -28,7 +28,7 @@ class Funcoesdequery:
         match int(tipodeconsulta):
             case 1:
                 perfilDeBusca = consulta["nome"]
-                sql = f"INSERT INTO tb_contatos (T_NOMECONTATO) VALUES ('{perfilDeBusca}')"
+                sql = f"DELETE FROM tb_contatos WHERE T_NOMECONTATO='{perfilDeBusca}' "
             case 2:
                 perfilDeBusca = consulta["numero"]
                 sql = f"INSERT INTO tb_contatos (T_TELEFONECONTATO) VALUES ('{perfilDeBusca}')"

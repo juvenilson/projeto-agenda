@@ -2,6 +2,8 @@ import os
 import sqlite3
 from sqlite3 import Error
 
+
+
 def conexaoBancoDados():
     caminhoBancodados = "C:/Users/juven/OneDrive/Documents/aulas-jornada-do-dev/agenda.db"
     conexao = None
